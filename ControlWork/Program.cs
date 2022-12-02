@@ -14,6 +14,9 @@ Console.WriteLine();
 Console.Write("Слова длина которых меньше либо равна 3 символа: ");
 PrintArray(arrayWithThreeCharacters);
 
+//отображение ответа как в примере
+// PrintArray(arrayEnterData); Console.Write("->"); PrintArray(arrayWithThreeCharacters);
+
 //Методы
 
 void PrintArray(string[] array) // Печатает одномерный массив
@@ -24,7 +27,7 @@ void PrintArray(string[] array) // Печатает одномерный мас�
         if (i < array.Length - 1) Console.Write($"{array[i]} ; ");
         else Console.Write($"{array[i]}");
     }
-    Console.WriteLine("]");
+    Console.Write("]");
 }
 
 int InputNumber(string message) // Проверяет введеные данные
