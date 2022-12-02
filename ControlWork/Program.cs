@@ -7,6 +7,8 @@ Console.WriteLine("Программа формирует массив из ст�
 int n = InputNumber("Введите колличество слов, которое собиратесь ввести: ");
 string[] arrayEnterData = FillArray(n);
 
+int sizeNewArray = CountWordsSizeThree(arrayEnterData);
+Console.WriteLine($"{sizeNewArray}");
 
 PrintArray(arrayEnterData);
 
@@ -58,3 +60,17 @@ string[] FillArray(int size)
     return arrayInpuyData;
 }
 
+int CountWordsSizeThree(string[] array)
+{
+    int count = default;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3) count++;
+    }
+    return count;
+}
+
+// string[] ArrayWithThreeCharacters(string[] array)
+// {
+
+// }
