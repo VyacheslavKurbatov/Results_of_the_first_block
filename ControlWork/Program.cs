@@ -7,10 +7,12 @@ Console.WriteLine("Программа формирует массив из ст�
 int n = InputNumber("Введите колличество слов, которое собиратесь ввести: ");
 string[] arrayEnterData = FillArray(n);
 
-int sizeNewArray = CountWordsSizeThree(arrayEnterData);
-Console.WriteLine($"{sizeNewArray}");
+int sizeArrayWithThreeCharacters = CountWordsSizeThree(arrayEnterData);
+string[] arrayWithThreeCharacters =  ArrayWithThreeCharacters(arrayEnterData, sizeArrayWithThreeCharacters);
 
-PrintArray(arrayEnterData);
+Console.WriteLine();
+Console.Write("Слова длина которых меньше либо равна 3 символа: ");
+PrintArray(arrayWithThreeCharacters);
 
 //Методы
 
@@ -49,7 +51,7 @@ int InputNumber(string message) // Проверяет введеные данн�
     }
 }
 
-string[] FillArray(int size)
+string[] FillArray(int size) // Заполняет массив
 {
     string[] arrayInpuyData = new string[size];
     Console.WriteLine("Введите слова через Enter");
@@ -60,7 +62,7 @@ string[] FillArray(int size)
     return arrayInpuyData;
 }
 
-int CountWordsSizeThree(string[] array)
+int CountWordsSizeThree(string[] array) // Считает сколько слов длинной <= 3
 {
     int count = default;
     for (int i = 0; i < array.Length; i++)
@@ -70,7 +72,13 @@ int CountWordsSizeThree(string[] array)
     return count;
 }
 
-// string[] ArrayWithThreeCharacters(string[] array)
-// {
-
-// }
+string[] ArrayWithThreeCharacters(string[] array, int size) // Заполняет новый массив словами длинной <= 3
+{
+    string[] newArray = new string[size];
+    int j = default;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3) newArray[j++] = array[i];
+    } 
+    return newArray;
+}
